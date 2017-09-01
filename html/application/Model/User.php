@@ -196,6 +196,41 @@ class User
         return false;
     }
 
+    public function bindOdoo($password)
+    {
+        $answer = false;
+
+        // En dev, on utilise les credentials login='login' / password='password'
+        if (ENVIRONMENT === 'dev' AND $this->login === 'login' AND $password === 'password') {
+            $this->firstname = 'dev';
+            $this->lastname = 'php';
+            $this->id = 1;
+            $this->mail = 'dev.php@lacagette-coop.fr';
+            $this->setAdmin();
+            $this->getData();
+            $this->admin = 1;
+            $answer = true;
+        } else {
+            $this->mail = $this->login;
+            $this->getData();
+
+            if (isset($this->birthdate) && strlen($this->birthdate) > 0) {
+                //conversion AAAA-MM-JJ => jjmmyyyy
+                list($y,$m,$d) = explode('-',$this->birthdate);
+                $password = str_replace('/','',trim($password));
+                if ($password == $d . $m .$y) {
+                    $answer = true;
+                }
+            }
+           
+           
+        }
+
+        return $answer;
+
+    }
+
+
     // Récupération des données du membre depuis Odoo et la base locale
     public function getData()
     {
@@ -206,10 +241,7 @@ class User
         $proxy = new OdooProxy();
 
         if ($proxy->connect() === true)  {
-            // Si la connexion réussit, on récupère les prochains shifts de l'utilisateur
-
-            $this->nextShifts = $proxy->getUserNextShifts($this->mail);
-            // TODO_LATER: gérer les erreurs qui peuvent survenir
+                        
             $infos = formatUserInfo($proxy->getUserInfo($this->mail));
             // On recopie simplement les infos récupérées dans les attributs de User
             $this->setStreet(isset($infos['street']) ? $infos['street'] : null);
@@ -217,7 +249,17 @@ class User
             $this->phone = isset($infos['mobile']) ? $infos['mobile'] : null;
             $this->shift_type = isset($infos['shift_type']) ? $infos['shift_type'] : null;
             $this->cooperative_state = isset($infos['cooperative_state']) ? $infos['cooperative_state'] : null;
+            $this->birthdate = isset($infos['birthdate']) ? $infos['birthdate'] : '';
+            $this->firstname = isset($infos['firstname']) ? $infos['firstname'] : 'Prénom';
+            $this->lastname = isset($infos['lastname']) ? $infos['lastname'] : 'Nom';
+            
+            if (is_numeric($this->idOdoo)) {
+               $this->nextShifts = $proxy->getUserNextShifts($this->mail);
+                      
+            }
+          
             $this->hasData = true;
+
         } else {
             error_log("Odoo connection error for user " . $this->login);
         }

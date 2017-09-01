@@ -44,7 +44,7 @@ class LoginController
         if (isset($_SESSION['bad_credentials']) AND $_SESSION['bad_credentials'] === true) {
             $error_msg = "ERREUR: Indentifiants invalides.";
             if (ENVIRONMENT === 'dev') {
-                $error_msg = "PSSSSTTT: en dev c'est login/password";
+                //$error_msg = "PSSSSTTT: en dev c'est login/password";
             }
         }
         $session = new Token();
@@ -80,7 +80,7 @@ class LoginController
         $user->setLogin($login);
 
         //try credentials
-        $logginSuccesful = $user->bindLdap($password);
+        $logginSuccesful = $user->bindOdoo($password);
 
         // Si les credentials sont corrects, on sérialise l'utilisateur
         // Ce qui est équivalent à dire qu'il est loggué

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>La Louve &rsaquo; Mon Espace</title>
+        <title>La Cagette &rsaquo; Mon Espace</title>
         <link href="<?php echo URL; ?>css/bootstrap.min.css" rel="stylesheet" type='text/css'>
         <link href="<?php echo URL; ?>css/louve-styles.css" rel="stylesheet" type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,900,300' rel='stylesheet' type='text/css'>
@@ -37,7 +37,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo URL; ?>"><img alt="La Louve" src="<?php echo URL; ?>img/Louve_logo.png" width="27px"/></a>
+            <a class="navbar-brand" href="<?php echo URL; ?>"><img alt="La Cagette" src="<?php echo URL; ?>img/Cagette_logo.png" width="37px"/></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#louvenav" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>

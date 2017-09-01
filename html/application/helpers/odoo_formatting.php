@@ -4,12 +4,21 @@ use Louve\Model\Shift;
 // Transforme un résultat de l'api Odoo dans un format moins dégueu :)
 function formatUserInfo($userInfo)
 {
+    $revelant_data = $userInfo->me['struct'];    
+    
+    list($firstname,$lastname) = explode (" ",$revelant_data['name']->me['string']);
+    //mobile return value (Cagette), is a boolean type
     return [
-        "street" => $userInfo->me['struct']['street']->me['string'],
-        "mobile" => $userInfo->me['struct']['mobile']->me['string'],
-        "shift_type" => $userInfo->me['struct']['shift_type']->me['string'],
-        "cooperative_state" => $userInfo->me['struct']['cooperative_state']->me['string'],
-        "id" => $userInfo->me['struct']['id']->me['int'],
+        "street" => $revelant_data['street']->me['string'],
+        //"mobile" => $userInfo->me['struct']['mobile']->me['string'],
+        "mobile" => $userInfo->me['struct']['phone']->me['string'],
+        //Dans l'import initial c'est le champ Phone qui a été alimenté...
+        "shift_type" => $revelant_data['shift_type']->me['string'],
+        "cooperative_state" => $revelant_data['cooperative_state']->me['string'],
+        "id" => $revelant_data['id']->me['int'],
+        "birthdate" => $revelant_data['birthdate']->me['string'],
+        "firstname" => $firstname,
+        "lastname" => $lastname
     ];
 
     //~ TODO replace by return xml_decode($userInfo);

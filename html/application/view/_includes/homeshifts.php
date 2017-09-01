@@ -5,7 +5,9 @@
     <?php
 
     $shifts = $user->getNextShifts();
-	
+	 ob_start();
+        print_r($shifts);
+        file_put_contents('/tmp/debugem', date('Y-m-d H:i:s').ob_get_clean()."\n",FILE_APPEND);
     if ( isset($shifts[0]) && null !== $shifts[0])
     {
 		

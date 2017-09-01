@@ -55,20 +55,33 @@ class Shift
      */
     public function addCoordinator($coordinator_id)
     {
-        $proxy = new OdooProxy();
-        if ($proxy->connect() === true)
-        {
-            $values = $proxy->getCoordinatorInfo($coordinator_id);
-            
-            $coordinateur = new Coordinator();
-            $coordinateur->setEmail($values->me['struct']['email']->me['string']);
-            $coordinateur->setLastname(explode(", ",$values->me['struct']['name']->me['string'])[0]);
-            $coordinateur->setFirstname(explode(", ",$values->me['struct']['name']->me['string'])[1]);
-            
-            $coordinateur->setPhone(isset($values->me['struct']['mobile']->me['string']) ? $values->me['struct']['mobile']->me['string'] : null);
+       
+        if (is_numeric($coordinator_id)) {
+            $proxy = new OdooProxy();
+            if ($proxy->connect() === true)
+            {
+                
+                $values = $proxy->getCoordinatorInfo($coordinator_id);
+              
+                if (isset($values->me['struct']['name'])) {
+                    $coordinateur = new Coordinator();
+                    $sep = " ";
+                    if (strpos($values->me['struct']['name']->me['string'], ', ') !== FALSE) {
+                        $sep = ", ";
+                    }
+                    $coordinateur->setEmail($values->me['struct']['email']->me['string']);
+                    $coordinateur->setLastname(explode($sep, $values->me['struct']['name']->me['string'])[0]);
+                    $coordinateur->setFirstname(explode($sep, $values->me['struct']['name']->me['string'])[1]);
+                    $coordinateur->setPhone(isset($values->me['struct']['phone']->me['string']) ? $values->me['struct']['phone']->me['string'] : null);
+                    //Import initial Cagette : seul le champ Phone a été alimenté (sans distinction de type)
+                    /*
+                    $coordinateur->setPhone(isset($values->me['struct']['mobile']->me['string']) ? $values->me['struct']['mobile']->me['string'] : null);
+                    */
 
-            // Si la connexion réussit, on récupère le coordinateur du shift
-            $this->coordinators[count($this->coordinators)] = $coordinateur;
+                    // Si la connexion réussit, on récupère le coordinateur du shift
+                    $this->coordinators[count($this->coordinators)] = $coordinateur;
+                }
+            }
         }
     }
 

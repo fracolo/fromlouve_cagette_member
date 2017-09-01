@@ -21,9 +21,11 @@ class OdooProxy
     // return true si la connexion réussit, false sinon
     public function connect()
     {
+        
         // Si on est en dév local, on n'utilise pas odoo et on considère qu'on arrive à se connecter
         if (ENVIRONMENT === 'dev'){
-            return true;
+
+            //return true;
         }
 
         $client = new Client(ODOO_SERVER_URL . "/xmlrpc/common");
@@ -52,9 +54,11 @@ class OdooProxy
     // Récupération des prochains créneaux de l'utilsateur (basé sur son email)
     public function getUserNextShifts($mail)
     {
+
         // En dév local on renvoie des valeurs bidons
         if (ENVIRONMENT === 'dev') {
-            return (new FakeOdoo())->nextShifts();
+            //return (new FakeOdoo())->nextShifts();
+            //la stucture de données renvoyée est incompatible avec le code qui suit...!
         }
 
         $odoo_table = "shift.registration";
@@ -82,12 +86,14 @@ class OdooProxy
         $raw_values = self::getEntriesValues($client, $odoo_table, $user_entries, $field_list);
 
         $result = $raw_values->value()->scalarval();
-        //die(var_dump($result));
+        
         $returnedShifts = array();
-        //echo(count($result)); 
+        
+        
         for($i = 0; $i < count($result) AND $i < 3; $i++) {
         
             $nextTime = $result[$i]->me['struct']['date_begin']->me['string'];
+
             list($dd, $day, $month, $year, $hour, $minutes) = formatDate($nextTime);
 
             //todo a virer des qu on sait comment virer les faux shifts d odoo
@@ -124,9 +130,11 @@ class OdooProxy
                 array_push($returnedShifts ,$shift);
             }
         }
+       
         //die(print_r(json_encode($returnedShifts ),true));
         //die(var_dump(self::getCoordinatorInfo("7284")));
-        //        
+        //      
+
         return  $returnedShifts;
     }
 
@@ -135,7 +143,7 @@ class OdooProxy
     {
         // En dév local on renvoie des infos bidons
         if (ENVIRONMENT === 'dev') {
-            return (new FakeOdoo())->userInfo()[0];
+            //return (new FakeOdoo())->userInfo()[0];
         }
 
         $odoo_table = "res.partner";
@@ -150,9 +158,12 @@ class OdooProxy
         $field_list = array(
             new Value("street", "string"),
             new Value("mobile", "string"),
+            new Value("phone", "string"),
             new Value("email", "string"),
             new Value("shift_type", "string"),
             new Value("cooperative_state", "string"),
+            new Value("birthdate","string"),
+            new Value("name","string")
         );
 
         // Requête de ces champs sur les lignes sélectionnées
@@ -170,7 +181,8 @@ class OdooProxy
     {
         // En dév local on renvoie des infos bidons
         if (ENVIRONMENT === 'dev') {
-            return (new FakeOdoo())->userInfo()[0];
+            //return (new FakeOdoo())->userInfo()[0];
+            //incompatible avec structure attendue plus tard dans le code....
         }
 
         $odoo_table = "res.partner";
@@ -184,6 +196,7 @@ class OdooProxy
         $field_list = array(
             new Value("street", "string"),
             new Value("mobile", "string"),
+            new Value("phone", "string"),
             new Value("email", "string"),
             new Value("shift_type", "string"),
             new Value("cooperative_state", "string"),
@@ -206,7 +219,7 @@ class OdooProxy
     {
         // TODO_NOW En dév local renvoyer des infos bidons
         if (ENVIRONMENT === 'dev') {
-            return;
+            //return;
         }
         $odoo_table = "shift.ticket";
         $client = new Client(ODOO_SERVER_URL . "/xmlrpc/object");
@@ -339,8 +352,8 @@ class OdooProxy
         );
 
         $response = $client->send($msg);
-	
-        error_log('Erreur Odoo #3: Date('. $date . ')'. print_r($response, TRUE));
+	    //Pourquoi logguer une erreur sans condition ???
+        //error_log('Erreur Odoo #3: Date('. $date . ')'. print_r($response, TRUE));
         $uids_list = array();
         try{
         $uids = $response->value()->scalarval();
@@ -561,7 +574,7 @@ try{
             new Value("partner_id", "string"),
             new Value("state", "string"),
             new Value("date_begin", "string"),
-            new Value("state", "string"),
+            new Value("state", "string")
             
         );
 

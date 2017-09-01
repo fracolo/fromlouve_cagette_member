@@ -10,6 +10,10 @@
  */
 
 namespace Louve\Controller;
+use Louve\Model\User;
+use Louve\Model\Event;
+use Louve\Model\Emergency;
+use Louve\Model\Shift;
 
 class ErrorController
 {

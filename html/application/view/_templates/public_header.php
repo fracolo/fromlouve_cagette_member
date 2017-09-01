@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Membres - La Louve</title>
+    <title>Membres - La Cagette</title>
     <link href="<?php echo URL; ?>css/bootstrap.min.css" rel="stylesheet" type='text/css'>
     <link href="<?php echo URL; ?>css/bootstrap-theme.min.css" rel="stylesheet" type='text/css'>
     <link href="<?php echo URL; ?>css/font-awesome.min.css" rel="stylesheet" type='text/css'>
