@@ -13,7 +13,7 @@ class Meeting extends BaseDBModel
 
     public function getNext()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "SELECT * FROM assemblees WHERE date >= CURDATE() ORDER BY date ASC LIMIT 0, 1 ";
             $query = $this->db->prepare($sql);
             $query->execute();

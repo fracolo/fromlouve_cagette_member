@@ -13,7 +13,7 @@ class Event extends BaseDBModel
 
     public function getNext()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "SELECT * FROM event WHERE date >= CURDATE() ORDER BY date ASC LIMIT 0, 1 ";
             $query = $this->db->prepare($sql);
             $query->execute();
@@ -32,7 +32,7 @@ class Event extends BaseDBModel
 
     public function getNextMeeting()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "SELECT * FROM event WHERE date >= CURDATE() and type='ag' ORDER BY date ASC LIMIT 0, 1 ";
             $query = $this->db->prepare($sql);
             $query->execute();
@@ -51,7 +51,7 @@ class Event extends BaseDBModel
     // supprime un evenement de la base
     public function destroy($id)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "delete from event where id=:id";
             $query = $this->db->prepare($sql);
             $query->bindParam(':id', $id);
@@ -65,7 +65,7 @@ class Event extends BaseDBModel
     // Retourne toutes les evenements existants
     public function getAll()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = 'SELECT * FROM event order by id desc';
             $query = $this->db->prepare($sql);
             $query->execute();
@@ -89,7 +89,7 @@ class Event extends BaseDBModel
     // Ajout d'un nouvel event
     public function save($info, $lien, $titre, $date, $type)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "INSERT INTO event(info, lien, titre, date, type) VALUES (:info, :lien, :titre, :date, :type)";
             $query = $this->db->prepare($sql);
             $query->bindParam(':info', $info);
@@ -122,7 +122,7 @@ class Event extends BaseDBModel
 // Modification d'un  evenement existant
     public function update($id, $info, $lien, $titre, $date, $type)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "update event set info=:info,lien=:lien,titre=:titre,date=:date,type=:type where id=:id";
             $query = $this->db->prepare($sql);
             $query->bindParam(':id', $id);

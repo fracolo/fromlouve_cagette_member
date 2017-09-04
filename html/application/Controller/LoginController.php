@@ -42,7 +42,7 @@ class LoginController
         // et permet d'afficher une erreur le cas échéant
         $error_msg = null;
         if (isset($_SESSION['bad_credentials']) AND $_SESSION['bad_credentials'] === true) {
-            $error_msg = "ERREUR: Indentifiants invalides.";
+            $error_msg = "ERREUR: Identifiants invalides.";
             if (ENVIRONMENT === 'dev') {
                 //$error_msg = "PSSSSTTT: en dev c'est login/password";
             }
@@ -107,7 +107,7 @@ class LoginController
         // En dev, on utilise les credentials login='login' / password='password'
         if (ENVIRONMENT === 'dev' AND $login === 'login' AND $password === 'password') {
             $logginSuccesful = true;
-        } elseif ($user->bindLdap($password)) {
+        } elseif ($user->bindOdoo($password)) {
             $logginSuccesful = true;
         }
 

@@ -14,7 +14,7 @@ class Emergency extends BaseDBModel
     //retourne l'urgence du moment
     public function getCurrent()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = 'SELECT * FROM urgences WHERE date <= CURDATE() AND datefin >= CURDATE() ORDER BY id DESC LIMIT 0, 1';
             $query = $this->db->prepare($sql);
             $query->execute();
@@ -36,7 +36,7 @@ class Emergency extends BaseDBModel
      */
    public function getCurrents()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = 'SELECT * FROM urgences WHERE date <= CURDATE() AND datefin >= CURDATE() ORDER BY id DESC';
             $query = $this->db->prepare($sql);
             $query->execute();
@@ -55,7 +55,7 @@ class Emergency extends BaseDBModel
     // supprime une urgence de la base
     public function destroy($id)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "delete from urgences where id=:id";
             $query = $this->db->prepare($sql);
             $query->bindParam(':id', $id);
@@ -69,7 +69,7 @@ class Emergency extends BaseDBModel
     // Retourne toutes les urgences existantes
     public function getAll()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = 'SELECT * FROM urgences order by id desc';
             $query = $this->db->prepare($sql);
             $query->execute();
@@ -94,7 +94,7 @@ class Emergency extends BaseDBModel
     // Ajout d'une nouvelle urgence
     public function save($info, $lien, $titre, $datefin, $date)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "INSERT INTO urgences(info, lien, titre, datefin,date) VALUES (:info, :lien, :titre, :datefin, :date)";
             $query = $this->db->prepare($sql);
             $query->bindParam(':info', $info);
@@ -128,7 +128,7 @@ class Emergency extends BaseDBModel
     // Modification d'une urgence existante
     public function update($id, $info, $lien, $titre, $datefin, $date)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "update urgences set info=:info,lien=:lien,titre=:titre,datefin=:datefin,date=:date where id=:id";
             $query = $this->db->prepare($sql);
             $query->bindParam(':id', $id);
@@ -163,7 +163,7 @@ class Emergency extends BaseDBModel
  
     public function isActive() 
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = 'SELECT * FROM urgences WHERE date <= CURDATE() AND datefin >= CURDATE() ORDER BY id DESC LIMIT 0, 1';
             $query = $this->db->prepare($sql);
             $query->execute();

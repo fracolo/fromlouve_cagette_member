@@ -5,7 +5,7 @@
  * Uses namespaces + composer's autoloader (PSR-4)
  * For more info about namespaces please @see http://php.net/manual/en/language.namespaces.importing.php
  */
-
+ini_set('session.save_path',getcwd(). '/../session');
 // "Hack" pour le développement seulement: le fichier .htaccess n'est pas utilisé par le builtin
 // server de PHP. Il faut donc dupliquer ses fonctionnalités
 $filename = __DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);

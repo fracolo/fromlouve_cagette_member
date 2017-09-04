@@ -15,7 +15,7 @@ class Document extends BaseDBModel
     // supprime un evenement de la base
     public function destroy($id)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "delete from Documents where id=:id";
             $query = $this->db->prepare($sql);
             $query->bindParam(':id', $id);
@@ -29,7 +29,7 @@ class Document extends BaseDBModel
     // Retourne toutes les evenements existants
     public function getAll()
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = 'SELECT * FROM Documents order by id desc';
             $query = $this->db->prepare($sql);
             $query->execute();
@@ -52,7 +52,7 @@ class Document extends BaseDBModel
     // Ajout d'un nouvel event
     public function save($lien, $icone, $categorie, $titre, $acces)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "INSERT INTO Documents( lien, icone, categorie, titre, acces) VALUES (:lien, :icone, :categorie, :titre, :acces)";
             $query = $this->db->prepare($sql);
             $query->bindParam(':lien', $lien);
@@ -85,7 +85,7 @@ class Document extends BaseDBModel
 // Modification d'un  evenement existant
     public function update($id, $lien, $icone, $categorie, $titre, $acces)
     {
-        if (!$this->fake) {
+        if (FALSE && !$this->fake) {
             $sql = "update Documents set lien=:lien,icone=:icone,categorie=:categorie,titre=:titre,acces=:acces where id=:id";
             $query = $this->db->prepare($sql);
             $query->bindParam(':id', $id);
