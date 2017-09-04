@@ -5,9 +5,7 @@
     <?php
 
     $shifts = $user->getNextShifts();
-	 ob_start();
-        print_r($shifts);
-        file_put_contents('/tmp/debugem', date('Y-m-d H:i:s').ob_get_clean()."\n",FILE_APPEND);
+	 
     if ( isset($shifts[0]) && null !== $shifts[0])
     {
 		
@@ -15,6 +13,7 @@
         $nexttime = $myshift->date;
 		 
         echo ('<h3> '. $nexttime .'</h3>');
+        /**
 		echo ('<h3> Coordinateurs</h3>');
 	    $countCoordinator = count($myshift->coordinators);
             for($j = 0; $j < $countCoordinator ; $j++)
@@ -24,6 +23,15 @@
             echo ("</a><br>");
 		    echo ("<a href='tel:" . $myshift->coordinators[$j]->getPhone()  . "'>" . $myshift->coordinators[$j]->getPhone()  . "</a><br>");
             }
+        **/
+        echo ("<b>En cas d'absence :</b> votre seule solution est d'échanger votre créneau avec un autre coopérateur. <br />");
+        echo ("<b>Pour un échange :</b> pas la peine de contacter le bureau des membres, il ne peut rien pour vous. C'est à vous de trouver un autre coopérateur pour vous remplacer (utilisez le forum en ligne et le tableau blanc). <br />");
+        echo ("<b>Pour un retard :</b> pas la peine de nous prévenir. Les retards pénalisent le travail de votre équipe, vous risquez des rattrapages ! <br />");
+        echo ("Pour trouver une réponse relative à votre participation, référez vous au manuel des membres : c'est notre bible ! <br/>");
+        echo ("Pour toute question spécifique, contactez le bureau des membres :<br />");
+        echo ("<b>Par téléphone : </b> 04 11 80 25 31<br />");
+        echo ("<b>Sur place : </b>  les mercredi, jeudi, vendredi et samedi entre 13h30 et 19h au bureau des membres, 11 rue Balard. " );
+ 
     }
     else {
         echo ("<h3>Vous n'êtes inscrit a aucun service.</h3>");
@@ -52,27 +60,16 @@
 	$day = date('D');
 	$min = date('i');
 	$hrs = date('H');
-	if ($day == 'Mon')
+	if ($day == 'Mon' || $day == 'Tue')
 	{
 		echo '<h3 style="color : red">Actuellement fermé</h3>';
-		echo '<h4>Le magasin est fermé aujourd\'hui. A demain.</h4>';
+		echo '<h4>Le magasin est fermé aujourd\'hui. Il ouvrira mercredi.</h4>';
 	}
 	else if ($day == 'Sun')
 	{
-		$debut = "08:30:00";
-		$imminente = "11:30:00";
-		$fin = "12:30:00";
-
-		if (time() >= strtotime($debut) && time() <= strtotime($fin)) {
-			if (time() >= strtotime($imminente))
-			echo '<h3 style="color : orange">Fermeture imminente</h3>';
-			else
-			echo '<h3 style="color : green">Actuellement ouvert</h3>';
-		}
-		else{
-			echo '<h3 style="color : red">Actuellement fermé</h3>';
-		}
-		echo '<h4>Le magasin est ouvert le dimanche de 8h30 à 12h00.</h4>';
+		
+		echo '<h3 style="color : red">Actuellement fermé</h3>';
+		
 		/*if ($hrs < 8 OR $hrs > 13)
 			echo '<h3 style="color : red">Actuellement fermé</h3>';
 		else if ($hrs == 8 AND $min < 30)
@@ -85,19 +82,24 @@
 			echo '<h3 style="color : green">Actuellement ouvert</h3>';
 		echo '<h4>Le magasin est ouvert aujourd\'hui de 8h30 à 12h30.</h4>';
 		*/
+		echo '<h4>Le magasin est fermé aujourd\'hui. Il ouvrira mercredi.</h4>';
 	}
 	else
 	{
-		$debut = "09:00:00";
-		$imminente = "20:00:00";
-		$fin = "21:00:00";
+		$debut = "08:00:00";
+		$imminente = "20:30:00";
+		$fin = "21:30:00";
 
 		if (time() >= strtotime($debut) && time() <= strtotime($fin)) {
 			if (time() >= strtotime($imminente))
 			echo '<h3 style="color : orange">Fermeture imminente</h3>';
-			else
-			echo '<h3 style="color : green">Actuellement ouvert</h3>';
-
+			else {
+				if (time() >= strtotime("16:30:00") || time() <= strtotime("10:45:00")) { 
+					echo '<h3 style="color : green">Actuellement ouvert</h3>';
+				} else {
+					echo '<h3 style="color : red">Actuellement fermé</h3>';
+				}
+			}
 		}
 		else{
 			echo '<h3 style="color : red">Actuellement fermé</h3>';
@@ -111,7 +113,7 @@
 		else 
 			echo '<h3 style="color : green">Actuellement ouvert</h3>';
 			*/
-		echo '<h4>Le magasin est ouvert aujourd\'hui de 9h à 21h.</h4>';
+		echo '<h4>Le magasin est ouvert aujourd\'hui de 8h à 10h45 puis de 16h30 à 21h30.</h4>';
 	}
 	//echo '<a href="http://www.openstreetmap.org/node/4437524492#map=16/48.8944/2.3530" ><button class="btn btn-default"><span class="glyphicon glyphicon-map-marker"></span> 116 Rue des Poissonniers, 75018 Paris</button></a>';
 	echo '<p> Ces horaires sont susceptibles de varier lors de certains évènements. Consultez les urgences pour en savoir plus.</p>';

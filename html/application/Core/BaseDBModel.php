@@ -19,7 +19,7 @@ class BaseDBModel
      */
     function __construct()
     {
-        if (ENVIRONMENT !== 'dev')
+        if (FALSE && ENVIRONMENT !== 'dev')
         {
             try {
                 self::openDatabaseConnection();
