@@ -6,6 +6,7 @@
             <h3  class="entete ui horizontal divider"><strong>Prochaine AG</strong></h3>
             <div class="louve-box">
             <?php
+                /**
                 $infos = $event->getNextMeeting();
                 if (is_object($infos)) {
 			        echo ('<h3>' . $infos->info . ' </a></h3>');
@@ -13,6 +14,8 @@
                 } else {
                     echo "La date sera bientôt définie.";   
                 }
+                **/
+                echo "La date sera bientôt définie."; 
 			?>
             </div>
         </div>

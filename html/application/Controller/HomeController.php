@@ -52,7 +52,7 @@ class HomeController
         require APP . 'view/_templates/header.php';
         // Pour éviter les 'require' de templates imbriqués, la classe container est ajoutée directement
         echo "<div class=container>";
-        require APP . 'view/home/_includes/emergencies.php';
+        //require APP . 'view/home/_includes/emergencies.php';
         require APP . 'view/home/_includes/status.php';
         require APP . 'view/_includes/homeshifts.php';
         require APP . 'view/home/_includes/next_meeting.php';

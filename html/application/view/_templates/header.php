@@ -48,10 +48,13 @@
 
         <div class="nav navbar-nav collapse navbar-collapse" id="louvenav">
             <li><a href="<?php echo URL . 'home/participation'; ?>"><span class="glyphicon glyphicon-time" style="color:grey"></span> MES SERVICES</a></li>
+            <!--
             <li><a href="<?php echo URL . 'home/services'; ?>"><span class="glyphicon glyphicon-ok" style="color:grey"></span> OUTILS</a></li>
             <li><a href="<?php echo URL . 'forum'; ?>"><span class="glyphicon glyphicon-earphone" style="color:grey"></span> FORUM</a></li>
             <li><a href="<?php echo URL . 'home/calendar'; ?>"><span class="glyphicon glyphicon-calendar" style="color: grey;"></span> CALENDRIER</a></li>
+            -->
             <?php
+            /**
             if ($user->isAdmin()) {
                 echo(' <li><a href="'.URL . 'management"><span class="glyphicon glyphicon-plus" style="color:grey"></span> GESTION </a></li>');
             }
@@ -59,6 +62,7 @@
                 $emergencyStyle = "color:lightcoral";
                 echo '<li><a href="' . URL . 'emergency/" style="' . $emergencyStyle . ';"><span class="glyphicon glyphicon-alert urgences"></span> URGENCES</a></li>';
             }
+            **/
         ?>
         </div>
         <ul class="nav navbar-inverse navbar-nav navbar-right">
