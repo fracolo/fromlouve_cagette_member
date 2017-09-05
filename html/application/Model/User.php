@@ -144,6 +144,7 @@ class User
             $this->cooperative_state = $that->shift_type;
             $this->hasData = $that->hasData;
             $this->idOdoo = $that->idOdoo;
+            $this->memberNum = $that->memberNum;
             
         } else {
             //echo 'NOT LOGGED';
@@ -243,6 +244,7 @@ class User
         if ($proxy->connect() === true)  {
                         
             $infos = formatUserInfo($proxy->getUserInfo($this->mail));
+            
             // On recopie simplement les infos récupérées dans les attributs de User
             $this->setStreet(isset($infos['street']) ? $infos['street'] : null);
             $this->idOdoo = isset($infos['id']) ? $infos['id'] : null;
@@ -252,7 +254,7 @@ class User
             $this->birthdate = isset($infos['birthdate']) ? $infos['birthdate'] : '';
             $this->firstname = isset($infos['firstname']) ? $infos['firstname'] : 'Prénom';
             $this->lastname = isset($infos['lastname']) ? $infos['lastname'] : 'Nom';
-            
+            $this->memberNum = isset($infos['memberNum']) ? $infos['memberNum'] : '';
             if (is_numeric($this->idOdoo)) {
                $this->nextShifts = $proxy->getUserNextShifts($this->mail);
                       
@@ -389,6 +391,15 @@ class User
     public function isAdmin()
     {
         return $this->admin;
+    }
+
+    /**
+     *  getMemberNum
+     *  @return int
+     */
+    public function getMemberNum()
+    {
+        return $this->memberNum;
     }
 
     // TODO_NOW: faire un helper commun qui renvoie une chaîne "info non dispo" si élément pas setté

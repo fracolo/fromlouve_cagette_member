@@ -163,7 +163,8 @@ class OdooProxy
             new Value("shift_type", "string"),
             new Value("cooperative_state", "string"),
             new Value("birthdate","string"),
-            new Value("name","string")
+            new Value("name","string"),
+            new Value("barcode_base","string")
         );
 
         // Requête de ces champs sur les lignes sélectionnées

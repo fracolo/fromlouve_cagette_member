@@ -18,7 +18,8 @@ function formatUserInfo($userInfo)
         "id" => $revelant_data['id']->me['int'],
         "birthdate" => $revelant_data['birthdate']->me['string'],
         "firstname" => $firstname,
-        "lastname" => $lastname
+        "lastname" => $lastname,
+        "memberNum" => $revelant_data['barcode_base']->me['int']
     ];
 
     //~ TODO replace by return xml_decode($userInfo);
