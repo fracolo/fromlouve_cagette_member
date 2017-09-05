@@ -113,7 +113,7 @@
 		else 
 			echo '<h3 style="color : green">Actuellement ouvert</h3>';
 			*/
-		echo '<h4>Le magasin est ouvert aujourd\'hui de 8h à 10h45 puis de 16h30 à 21h30.</h4>';
+		echo '<h4>Le magasin est ouvert aujourd\'hui de 8h à 10h45 puis de 16h30 à 21h00.</h4>';
 	}
 	//echo '<a href="http://www.openstreetmap.org/node/4437524492#map=16/48.8944/2.3530" ><button class="btn btn-default"><span class="glyphicon glyphicon-map-marker"></span> 116 Rue des Poissonniers, 75018 Paris</button></a>';
 	echo '<p> Ces horaires sont susceptibles de varier lors de certains évènements. Consultez les urgences pour en savoir plus.</p>';
