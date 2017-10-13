@@ -3,8 +3,9 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-6">
-            <h3  class="entete ui horizontal divider"><strong>Prochaine AG</strong></h3>
-            <div class="louve-box">
+            <!-- <h3  class="entete ui horizontal divider"><strong>Prochaine AG</strong></h3> -->
+            <h3  class="entete ui horizontal divider"><strong>Prochains Forums</strong></h3>
+                        <div class="louve-box">
             <?php
                 /**
                 $infos = $event->getNextMeeting();
@@ -15,8 +16,19 @@
                     echo "La date sera bientôt définie.";   
                 }
                 **/
-                echo "La date sera bientôt définie."; 
+                //echo "La date sera bientôt définie."; 
 			?>
+                <div>
+                Lundi 6 novembre 2017 18h45 - Salle de Bridge 30 rue Balard
+                </div>
+                <div>
+                Lundi 4 décembre 2017 18h45 - Salle de Bridge 30 rue Balard
+                </div>
+                <h3><strong>Un sujet dont vous souhaitez que l'on parle en forum ?</strong></h3>
+                Remplissez <a href="https://docs.google.com/forms/d/1_-Fre1P02O5F-TW6HJ-z0W0Saou7jEQwJE8xpjxcMIQ/edit">ce formulaire</a>
+                <div>
+                Le Groupe Forum / AG centralise les suggestions et verra comment le mettre à l'ordre du jour d'un prochain forum !
+                </div>
             </div>
         </div>
            <div class="col-xs-12 col-sm-6">
