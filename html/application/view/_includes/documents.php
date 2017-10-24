@@ -1,4 +1,10 @@
 <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+         	<h3 class="entete ui horizontal divider"><strong>La Gazette de La Cagette</strong></h3>
+         	<a href="https://infos-lacagette-coop.fr/LaGazettedeLaCagette" target="_blank"><img class="img-responsive img-center" alt="Lien vers la Gazette" src="/img/BoutonGAZETTE.jpg" /></a>
+        </div>
+      </div>
 	  <div class="row">
         <div class="col-lg-12">
             <h3 class="entete ui horizontal divider"><strong>Guides et manuels utiles</strong></h3>
