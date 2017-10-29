@@ -18,7 +18,8 @@ use Louve\Model\Token;
 // Un import 'use function Mini\Core\checkCredentials;' devrait marcher en théorie mais
 // Pas avec Mini3, le projet sur lequel on s'est basé !!
 // Donc on met les fonctions dans un fichier à part eton importe avec un require à l'ancienne
-require APP . 'helpers/ldap_connection.php';
+// La Cagette n'utilise pas de serveur LDAP pour l'authentification de ses membres
+//require APP . 'helpers/ldap_connection.php';
 
 
 class LoginController
@@ -72,8 +73,8 @@ class LoginController
             return false;
             //TODO gestion de la redirection
         }
-        $login = strip_tags($_POST['login']);
-        $password = strip_tags($_POST['password']);
+        $login = trim(strip_tags($_POST['login']));
+        $password = trim(strip_tags($_POST['password']));
         $logginSuccesful = false;
 
         $user = new User();
@@ -98,8 +99,8 @@ class LoginController
     // L'utilisateur envoi ses login/mdp
     public function postCredentials($rawLogin, $rawPassword)
     {
-        $login = strip_tags($rawLogin);   // DN ou RDN LDAP
-        $password = strip_tags($rawPassword);  // empecher les failles d'injection sql
+        $login = trim(strip_tags($rawLogin));   // DN ou RDN LDAP
+        $password = trim(strip_tags($rawPassword));  // empecher les failles d'injection sql
         $logginSuccesful = false;
 
         $user = new User($login);

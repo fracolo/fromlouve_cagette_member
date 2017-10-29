@@ -19,10 +19,7 @@
                 
                 <div class="col-md-4 col-xs-12">
                     <h3>Mercredi au samedi</h3>
-                    <p>  <button type="button" class="btn btn-default active">8h00-10h45</button></p>
-                    
-                    <p>  <button type="button" class="btn btn-default active">16h30-21h00</button></p>
-                    
+                    <p>  <button type="button" class="btn btn-default active">8h00-21h00</button></p>                    
                 </div>
                 <div class="col-md-4 col-xs-12">
                     <h3>Dimanche (fermé) </h3>

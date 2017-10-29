@@ -38,15 +38,17 @@
     }
     ?>
   </div>
-</div>
+</div>:
 
 <div>
     <div class="col-xs-12 col-sm-2">
-        <h3 class="entete ui horizontal divider"><strong>Semaine</strong><div id="subtitle">en cours</h3><div></h3>
+        <h3 class="entete ui horizontal divider"><strong>Semaine<br />en cours</strong></h3>
         <div class="louve-creneau">
+        
             <div id="current_week">
-                <?php echo $user->getCurrentWeek(); ?>
+                <?php /**echo $user->getCurrentWeek();**/ ?>
             </div>
+        
             <a href="pdfs/CalendrierABCD.pdf" target="_blank">Calendrier ABCD</a>
         </div>
     </div>
@@ -87,23 +89,19 @@
 	else
 	{
 		$debut = "08:00:00";
-		$imminente = "20:30:00";
-		$fin = "21:30:00";
+		$imminente = "20:00:00";
+		$fin = "21:00:00";
 
 		if (time() >= strtotime($debut) && time() <= strtotime($fin)) {
 			if (time() >= strtotime($imminente))
 			echo '<h3 style="color : orange">Fermeture imminente</h3>';
-			else {
-				if (time() >= strtotime("16:30:00") || time() <= strtotime("10:45:00")) { 
-					echo '<h3 style="color : green">Actuellement ouvert</h3>';
-				} else {
-					echo '<h3 style="color : red">Actuellement fermé</h3>';
-				}
-			}
+			else
+			echo '<h3 style="color : green">Actuellement ouvert</h3>';
 		}
 		else{
 			echo '<h3 style="color : red">Actuellement fermé</h3>';
 		}
+		
 		/*
 
 		if ($hrs < 9 OR $hrs > 21)
@@ -113,7 +111,7 @@
 		else 
 			echo '<h3 style="color : green">Actuellement ouvert</h3>';
 			*/
-		echo '<h4>Le magasin est ouvert aujourd\'hui de 8h à 10h45 puis de 16h30 à 21h00.</h4>';
+		echo '<h4>Le magasin est ouvert aujourd\'hui de 8h à 21h00.</h4>';
 	}
 	//echo '<a href="http://www.openstreetmap.org/node/4437524492#map=16/48.8944/2.3530" ><button class="btn btn-default"><span class="glyphicon glyphicon-map-marker"></span> 116 Rue des Poissonniers, 75018 Paris</button></a>';
 	echo '<p> Ces horaires sont susceptibles de varier lors de certains évènements. Consultez les urgences pour en savoir plus.</p>';

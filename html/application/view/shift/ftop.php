@@ -2,6 +2,7 @@
     <div class="row">
     <div class="col-xs-12">
         <h3  class="entete ui horizontal divider"><strong>Services volants disponibles</strong></h3>
+        <p>Vous êtes "volant" ? Inscrivez-vous à un des services suivants pour effectuer vos 3 heures mensuelles.</p>
             <div class="louve-creneau">
                 <div class = "table-responsive">
                 <table class = "table">
