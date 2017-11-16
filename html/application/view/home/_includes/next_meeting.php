@@ -18,9 +18,7 @@
                 **/
                 //echo "La date sera bientôt définie."; 
 			?>
-                <div>
-                Lundi 6 novembre 2017 18h45 - Salle de Bridge 30 rue Balard
-                </div>
+                
                 <div>
                 Lundi 4 décembre 2017 18h45 - Salle de Bridge 30 rue Balard
                 </div>
@@ -37,6 +35,12 @@
 			<h3><strong> Permanences 11 rue Balard <strong/></h3>
             
             <h4>mercredi - jeudi - vendredi - samedi : 13h30 - 19h</h4>
+            
+        </div>
+        <div class="louve-box">
+            <h3><strong> Planning des Volants <strong/></h3>
+            
+            <h4><a href="">Accès au document</a></h4>
             
         </div>
     </div>
