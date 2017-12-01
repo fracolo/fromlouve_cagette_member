@@ -5,7 +5,7 @@ body {
     z-index: 0;
 }
 
-
+.message {font-size: 133%; text-align:justify !important;}
 .louve-status {
     background-color: #ACDB9D;
     text-align: center;

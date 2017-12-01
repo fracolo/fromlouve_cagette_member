@@ -141,7 +141,7 @@ class User
             $this->street = $that->street;
             $this->phone = $that->phone;
             $this->shift_type = $that->shift_type;
-            $this->cooperative_state = $that->shift_type;
+            $this->cooperative_state = $that->cooperative_state;
             $this->hasData = $that->hasData;
             $this->idOdoo = $that->idOdoo;
             $this->memberNum = $that->memberNum;

@@ -48,6 +48,7 @@
 
         <div class="nav navbar-nav collapse navbar-collapse" id="louvenav">
             <li><a href="<?php echo URL . 'home/participation'; ?>"><span class="glyphicon glyphicon-time" style="color:grey"></span> MES SERVICES</a></li>
+            <li><a href="<?php echo URL . 'home/comites'; ?>"><span class="glyphicon glyphicon-thumbs-up" style="color:grey"></span> COMITÉS</a></li>
              <!--
             <li><a href="<?php echo URL . 'shift/ftopshifts'; ?>"><span class="glyphicon glyphicon-ok" style="color:grey"></span> VOLANTS</a></li>
             

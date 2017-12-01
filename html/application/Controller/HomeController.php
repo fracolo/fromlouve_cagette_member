@@ -108,4 +108,15 @@ class HomeController
         echo "</div>";
         require APP . 'view/_templates/footer.php';
     }
+
+     // Page présentant le document "Comités"
+    public function comites()
+    {
+        $user = new User();
+        $emergency = new Emergency();
+        
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/comites.html';
+        require APP . 'view/_templates/footer.php';
+    }
 }
