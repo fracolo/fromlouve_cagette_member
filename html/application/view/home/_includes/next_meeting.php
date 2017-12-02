@@ -35,6 +35,7 @@
 			<h3><strong> Permanences 11 rue Balard <strong/></h3>
             
             <h4>mercredi - jeudi - vendredi - samedi : 13h30 - 19h</h4>
+            <h4>04 11 80 25 31</h4>
             
         </div>
         <div class="louve-box">
