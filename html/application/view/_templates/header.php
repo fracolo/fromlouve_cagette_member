@@ -56,7 +56,7 @@
            
             <li><a href="<?php echo URL . 'home/services'; ?>"><span class="glyphicon glyphicon-ok" style="color:grey"></span> OUTILS</a></li>
             <li><a href="<?php echo URL . 'forum'; ?>"><span class="glyphicon glyphicon-earphone" style="color:grey"></span> FORUM</a></li>
-            <li><a href="<?php echo URL . 'home/calendar'; ?>"><span class="glyphicon glyphicon-calendar" style="color: grey;"></span> CALENDRIER</a></li>
+           
             -->
             <?php
             /**
