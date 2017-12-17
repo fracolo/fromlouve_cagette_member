@@ -36,7 +36,17 @@
             
             <h4>mercredi - jeudi - vendredi - samedi : 13h30 - 19h</h4>
             <h4>04 11 80 25 31</h4>
-            
+            <div class="row">
+                    <h4><strong>Attention, repos du BDM pendant les fêtes! <br/>Du mercredi 27 au samedi 30 décembre</strong></h4>
+                    <p>
+                        Le bureau des membres sera fermé. 
+
+                    </p>
+                    <p>
+                         Tous les créneaux BDM seront annulés.
+                    </p>
+
+            </div>
         </div>
         <div class="louve-box">
             <h3><strong> Planning des Volants <strong/></h3>
