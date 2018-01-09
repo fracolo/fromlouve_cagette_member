@@ -1,3 +1,6 @@
+<div class="row important">
+    Pour accéder à l'ancienne page d'accueil, cliquez ici : <a href="/home/tdb">Tableau de Bord</a>
+</div>
 <div class="row landing">
      <div class="louve-box">
         <a href="/home/agenda" class="main">Que se passe-t-il à La Cagette ?</a>
@@ -38,7 +41,7 @@
      <div class="louve-box">
         <a href="" class="main">D'autres questions ? Une procédure</a>
         <p>
-            Notre foire aux questions est un <em><a href="https://fr.wikipedia.org/wiki/Wiki">wiki</a></em> : <a href=""></a>
+            Notre foire aux questions est un <em><a href="https://fr.wikipedia.org/wiki/Wiki">wiki</a></em> : <a href="<?php echo YESWIKI?>" target="_blank"><?php echo YESWIKI_SHORT?></a>
         </p>
      </div>
 </div>

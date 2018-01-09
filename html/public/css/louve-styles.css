@@ -143,6 +143,8 @@ address{
 .navbar-brand > img {
     transition: transform .3s ease-in-out;
 }
+.landing a.main {font-size: 24px;}
+.important {background-color:#f3d780;padding:5px;}
 body{
 padding-top:60px;
 
@@ -167,4 +169,3 @@ padding-top:120px;
     color: #848484;
 }
 
-.landing a.main {font-size: 24px;}
