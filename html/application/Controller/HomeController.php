@@ -62,6 +62,58 @@ class HomeController
         require APP . 'view/_templates/footer.php';
     }
 
+     // Tableau de bord (ancien index)
+    public function tdb()
+    {
+        $user = new User();
+
+        // Nécessaire pour la pastille "prochaine AG": accès au modèle d'assemblée générale
+        $event = new Event();
+        // Nécessaire pour la pastille "Urgences": accès au modèle d'urgence
+        $emergency = new Emergency();
+        //chargement des shift => surement à déplacer dans user
+        $myshift = new Shift();
+
+
+        // Require des différents templates nécessaires à l'affichage de la page d'accueil
+        require APP . 'view/_templates/header.php';
+        // Pour éviter les 'require' de templates imbriqués, la classe container est ajoutée directement
+        echo "<div class=container>";
+        //require APP . 'view/home/_includes/emergencies.php';
+        require APP . 'view/home/_includes/status.php';
+        require APP . 'view/_includes/homeshifts.php';
+        require APP . 'view/home/_includes/next_meeting.php';
+        require APP . 'view/_includes/documents.php';
+        // fermeture du container initial
+        echo "</div>";
+        require APP . 'view/_templates/footer.php';
+    }
+
+    // Page principale
+    public function index2()
+    {
+        $user = new User();
+
+       
+        // Require des différents templates nécessaires à l'affichage de la page d'accueil
+        require APP . 'view/_templates/header.php';
+        // Pour éviter les 'require' de templates imbriqués, la classe container est ajoutée directement
+        echo "<div class=container>";
+        require APP . 'view/home/new_landing.php';
+        echo "</div>";
+        require APP . 'view/_templates/footer.php';
+    }
+
+    // Page présentant Drive 
+    public function organisation()
+    {
+        $user = new User();
+        $emergency = new Emergency();
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/organisation.php';
+        require APP . 'view/_templates/footer.php';
+    }
+   
     // Page "Mes informations" qui liste les infos personnelles de l'utilisateur
     public function myInfo()
     {

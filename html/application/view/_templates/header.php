@@ -48,8 +48,12 @@
 
         <div class="nav navbar-nav collapse navbar-collapse" id="louvenav">
             <li><a href="<?php echo URL . 'home/participation'; ?>"><span class="glyphicon glyphicon-time" style="color:grey"></span> MES SERVICES</a></li>
+            <li><a href="<?php echo URL . 'home/tdb'; ?>"><span class="glyphicon glyphicon-check" style="color:grey"></span> TABLEAU DE BORD</a></li>
             <li><a href="<?php echo URL . 'home/comites'; ?>"><span class="glyphicon glyphicon-thumbs-up" style="color:grey"></span> COMITÉS</a></li>
             <li><a href="<?php echo URL . 'home/calendar'; ?>"><span class="glyphicon glyphicon-calendar" style="color:grey"></span> AGENDA</a></li>
+            <!--
+             <li><a href="<?php echo URL . 'home/wiki'; ?>"><span class="glyphicon glyphicon-blackboard" style="color:grey"></span> ORGANISATION</a></li>
+            -->
              <!--
             <li><a href="<?php echo URL . 'shift/ftopshifts'; ?>"><span class="glyphicon glyphicon-ok" style="color:grey"></span> VOLANTS</a></li>
             
