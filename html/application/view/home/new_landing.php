@@ -39,7 +39,7 @@
 -->
 <div class="row landing">
      <div class="louve-box">
-        <a href="" class="main">D'autres questions ? Une procédure</a>
+        <a href="<?php echo YESWIKI?>" class="main" target="_blank">D'autres questions ? Une procédure</a>
         <p>
             Notre foire aux questions est un <em><a href="https://fr.wikipedia.org/wiki/Wiki">wiki</a></em> : <a href="<?php echo YESWIKI?>" target="_blank"><?php echo YESWIKI_SHORT?></a>
         </p>
