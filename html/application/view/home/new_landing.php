@@ -3,9 +3,9 @@
 </div>
 <div class="row landing">
      <div class="louve-box">
-        <a href="/home/agenda" class="main">Que se passe-t-il à La Cagette ?</a>
+        <a href="/home/calendar" class="main">Que se passe-t-il à La Cagette ?</a>
         <p>
-            Grâce à l’<a href="/home/agenda">agenda participatif</a>, vous pouvez connaître tous les évènement de La Cagette à venir.<br />
+            Grâce à l’<a href="/home/calendar">agenda participatif</a>, vous pouvez connaître tous les évènement de La Cagette à venir.<br />
             Soirées, conférences, projections de films mais surtout ... les réunions des groupes et comités.<br />
             <b>Le meilleur moyen de rejoindre un groupe c’est de se rendre à une de ses réunions !</b>
         </p>
@@ -14,7 +14,7 @@
 
 <div class="row landing">
      <div class="louve-box">
-        <a href="/home/comite" class="main">Que se passe-t-il dans les comités ?</a>
+        <a href="/home/comites" class="main">Que se passe-t-il dans les comités ?</a>
         <p>
             Grâce à Trello, nous pouvons visualiser les chantiers et projets en cours dans les différents groupes
             de travail et comités. <br />
@@ -39,7 +39,7 @@
 -->
 <div class="row landing">
      <div class="louve-box">
-        <a href="<?php echo YESWIKI?>" class="main" target="_blank">D'autres questions ? Une procédure</a>
+        <a href="<?php echo YESWIKI?>" class="main" target="_blank">D'autres questions ? Une procédure ?</a>
         <p>
             Notre foire aux questions est un <em><a href="https://fr.wikipedia.org/wiki/Wiki">wiki</a></em> : <a href="<?php echo YESWIKI?>" target="_blank"><?php echo YESWIKI_SHORT?></a>
         </p>

@@ -143,7 +143,7 @@ address{
 .navbar-brand > img {
     transition: transform .3s ease-in-out;
 }
-.landing a.main {font-size: 24px;}
+.landing a.main {font-size: 28px; font-weight:bold;}
 .important {background-color:#f3d780;padding:5px;}
 body{
 padding-top:60px;

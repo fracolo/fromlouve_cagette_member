@@ -28,16 +28,7 @@
 
 
             </div>
-            <div class="row">
-                    <h3><strong>Attention, horaires réduits pendant les fêtes! Du mercredi 27 au samedi 30 décembre</strong></h3>
-                    <p>
-                        Le magasin sera ouvert en en horaires réduits de <strong>14h à 21h30</strong>
-                    </p>
-                    <p>
-                         Les services de 6h/8h15 et 8h/11h au magasin seront annulés.
-                    </p>
-
-            </div>
+            
         </div>
     </div>
 </div>
