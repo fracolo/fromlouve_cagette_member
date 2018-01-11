@@ -25,7 +25,7 @@
             }
         **/
         echo ("<b>En cas d'absence :</b> votre seule solution est d'échanger votre créneau avec un autre coopérateur. <br />");
-        echo ("<b>Pour un échange :</b> pas la peine de contacter le bureau des membres, il ne peut rien pour vous. C'est à vous de trouver un autre coopérateur pour vous remplacer (utilisez le forum en ligne et le tableau blanc). <br />");
+        echo ("<b>Pour un échange :</b> pas la peine de contacter le bureau des membres, il ne peut rien pour vous. C'est à vous de trouver un autre coopérateur pour vous remplacer. <br />");
         echo ("<b>Pour un retard :</b> pas la peine de nous prévenir. Les retards pénalisent le travail de votre équipe, vous risquez des rattrapages ! <br />");
         echo ("Pour trouver une réponse relative à votre participation, référez vous au manuel des membres : c'est notre bible ! <br/>");
         echo ("Pour toute question spécifique, contactez le bureau des membres :<br />");

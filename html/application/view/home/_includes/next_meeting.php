@@ -41,7 +41,7 @@
         <div class="louve-box">
             <h3><strong> Planning des Volants <strong/></h3>
             
-            <h4><a href="">Accès au document</a></h4>
+            <h4><a href="<?php echo PLANNING_VOLANT?>">Accès au document</a></h4>
             
         </div>
     </div>
