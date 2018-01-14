@@ -20,7 +20,7 @@
 			?>
                 
                 <div>
-                Lundi 1er Février 2018 19h45 - Salle de Bridge 30 rue Balard
+                Jeudi 8 Février 2018 19h45 - Salle de Bridge 30 rue Balard
                 </div>
                 <h3><strong>Un sujet dont vous souhaitez que l'on parle en forum ?</strong></h3>
                 Remplissez <a href="https://docs.google.com/forms/d/1_-Fre1P02O5F-TW6HJ-z0W0Saou7jEQwJE8xpjxcMIQ/edit">ce formulaire</a>

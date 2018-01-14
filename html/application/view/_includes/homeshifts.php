@@ -42,14 +42,14 @@
 
 <div>
     <div class="col-xs-12 col-sm-2">
-        <h3 class="entete ui horizontal divider"><strong>Semaine<br />en cours</strong></h3>
+        <h3 class="entete ui horizontal divider"><strong>Aujourd'hui, <br />semaine</strong></h3>
         <div class="louve-creneau">
         
             <div id="current_week">
                 <?php /**echo $user->getCurrentWeek();**/ ?>
             </div>
         
-            <a href="pdfs/CalendrierABCD.pdf" target="_blank">Calendrier ABCD</a>
+            <a href="/pdfs/CalendrierABCD.pdf" target="_blank">Calendrier ABCD</a>
         </div>
     </div>
 </div>

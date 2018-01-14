@@ -89,6 +89,11 @@ class LoginController
             $this->session->setUser($user);
             $_SESSION['bad_credentials'] = false;
             header('location: ' . URL);
+            if(isset($_SESSION['forum_redirect'])) {
+                $forum_redirect = true;
+                header('location:'.$_SESSION['forum_redirect']);
+                unset($_SESSION['forum_redirect']);
+            }
         } else { // Sinon on garde l'info en session pour afficher une erreur
             $_SESSION['bad_credentials'] = true;
             header('location:'.URL.'/login/index');
@@ -111,17 +116,25 @@ class LoginController
         } elseif ($user->bindOdoo($password)) {
             $logginSuccesful = true;
         }
-
+        $forum_redirect = false;
         // Si les credentials sont corrects, on sérialise l'utilisateur
         // Ce qui est équivalent à dire qu'il est loggué
         if ($logginSuccesful === true) {
             $_SESSION['SerializedUser'] = serialize($user);
+            if(isset($_SESSION['forum_redirect'])) {
+                $forum_redirect = true;
+                header('location:'.$_SESSION['forum_redirect']);
+                unset($_SESSION['forum_redirect']);
+            }
+
         } else { // Sinon on garde l'info en session pour afficher une erreur
             $_SESSION['bad_credentials'] = true;
         }
 
-        // Dans tous les cas on redirige vers le point d'entrée de l'app
-        header('location: ' . URL);
+        if ($forum_redirect === false) {
+            header('location: ' . URL);
+        }
+        
     }
 
     public function logout()
