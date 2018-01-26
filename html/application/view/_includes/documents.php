@@ -32,7 +32,7 @@
 						<br/>Exemple de feuille de présence</a></p>
 				</div>
 				-->
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ><a href="pdfs/statutsCagette.pdf" target="_blank">
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ><a href="/pdfs/statutsCagette.pdf" target="_blank">
 					<p  ><img src="/img/sheet.png" style="width:80px;" alt="doc" class="img-responsive img-center" />
 						<br/>Statuts de la coopérative</a></p>
 				</div>
@@ -42,11 +42,11 @@
 						<br/>AG et comité Ordre du Jour</a></p>
 				</div>
 				-->
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ><a href="pdfs/manuelDesMembresLaCagette.pdf" target="_blank">
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ><a href="/pdfs/manuelDesMembresLaCagette.pdf" target="_blank">
 					<p><img src="/img/sheet.png" style="width:80px;" alt="doc" class="img-responsive img-center" />
 				<br/>Le Manuel des Membres</a></p>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ><a href="pdfs/modelePARKSLOPE.pdf" target="_blank">
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ><a href="/pdfs/modelePARKSLOPE.pdf" target="_blank">
 					<p><img src="/img/sheet.png" style="width:80px;" alt="doc" class="img-responsive img-center" />
 				<br/>Le Modèle Park Slope / La Louve</a></p>
 				</div>

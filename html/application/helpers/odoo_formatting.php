@@ -5,8 +5,11 @@ use Louve\Model\Shift;
 function formatUserInfo($userInfo)
 {
     $revelant_data = $userInfo->me['struct'];    
-    
-    list($firstname,$lastname) = explode (" ",$revelant_data['name']->me['string']);
+    //Attention, ce formatage suppose que le prénom est le premier élément de Name, et permet de récupérer correctement les patronymes du type LE BOSCO
+    $name_elts = explode (" ",$revelant_data['name']->me['string']);
+    $firstname = array_shift($name_elts);
+    $lastname = join(' ',$name_elts);
+
     //mobile return value (Cagette), is a boolean type
     return [
         "street" => $revelant_data['street']->me['string'],

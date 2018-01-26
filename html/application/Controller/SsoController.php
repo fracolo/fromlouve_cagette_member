@@ -17,8 +17,13 @@ class SsoController
     }
 
     private static function vanilla_auth() {
-        $response = NULL;
+        $request = $_GET;
         $u_conn = new User();
+        $user = array (
+                            
+                            'name'=> '',
+                            'email' => ''
+                          );
         if ($u_conn->hasData()) {
             $roles = "member";
             $email = $u_conn->getEmail();
@@ -36,19 +41,23 @@ class SsoController
                             'email' => $u_conn->getEmail(),
                             'roles' => $roles
                           );
-            $request = $_GET;
-            var_dump($u_conn);
-            $response = writeJsConnect($user, $request, VANILLA_CID, VANILLA_SECRET);
-            
+           
+                        
         }
-        return $response;
+        return writeJsConnect($user, $request, VANILLA_CID, VANILLA_SECRET);
     }
 
     private static function vanilla_signin() {
-        if(isset($_GET['redirect'])) {
-            $_SESSION['forum_redirect'] = $_GET['redirect'];
+        $u_conn = new User();
+        if ($u_conn->hasData()) {
+            header('location: ' . $_GET['redirect']);
         }
-        header('location: ' . URL);
+        else {
+            if(isset($_GET['redirect'])) {
+                $_SESSION['forum_redirect'] = $_GET['redirect'];
+            }
+            header('location: ' . URL);
+        }
     }
 
     public function vanilla($string) {

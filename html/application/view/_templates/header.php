@@ -51,6 +51,7 @@
             <li><a href="<?php echo URL . 'home/tdb'; ?>"><span class="glyphicon glyphicon-check" style="color:grey"></span> TABLEAU DE BORD</a></li>
             <li><a href="<?php echo URL . 'home/comites'; ?>"><span class="glyphicon glyphicon-thumbs-up" style="color:grey"></span> COMITÉS</a></li>
             <li><a href="<?php echo URL . 'home/calendar'; ?>"><span class="glyphicon glyphicon-calendar" style="color:grey"></span> AGENDA</a></li>
+             <li><a href="https://forum.lacagette-coop.fr"><span class="glyphicon glyphicon-edit" style="color:grey"></span> FORUM EN LIGNE</a></li>
             <!--
              <li><a href="<?php echo URL . 'home/wiki'; ?>"><span class="glyphicon glyphicon-blackboard" style="color:grey"></span> ORGANISATION</a></li>
             -->

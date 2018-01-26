@@ -88,11 +88,13 @@ class LoginController
         if ($logginSuccesful === true) {
             $this->session->setUser($user);
             $_SESSION['bad_credentials'] = false;
-            header('location: ' . URL);
+            
             if(isset($_SESSION['forum_redirect'])) {
                 $forum_redirect = true;
                 header('location:'.$_SESSION['forum_redirect']);
-                unset($_SESSION['forum_redirect']);
+                $_SESSION['forum_redirect'] = null;
+            } else {
+                header('location: ' . URL);
             }
         } else { // Sinon on garde l'info en session pour afficher une erreur
             $_SESSION['bad_credentials'] = true;
