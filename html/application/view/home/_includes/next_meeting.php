@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <!-- <h3  class="entete ui horizontal divider"><strong>Prochaine AG</strong></h3> -->
-            <h3  class="entete ui horizontal divider"><strong>Prochains Forums</strong></h3>
+            <h3  class="entete ui horizontal divider"><strong>Prochaines Agoras</strong></h3>
                         <div class="louve-box">
             <?php
                 /**
@@ -22,10 +22,10 @@
                 <div>
                 Jeudi 8 Février 2018 19h45 - Salle de Bridge 30 rue Balard
                 </div>
-                <h3><strong>Un sujet dont vous souhaitez que l'on parle en forum ?</strong></h3>
+                <h3><strong>Un sujet dont vous souhaitez que l'on parle en Agora ?</strong></h3>
                 Remplissez <a href="<?php echo AGORA_FORM;?>">ce formulaire</a>
                 <div>
-                Le Groupe Forum / AG centralise les suggestions et verra comment le mettre à l'ordre du jour d'un prochain forum !
+                Le Groupe Agora / AG centralise les suggestions et verra comment le mettre à l'ordre du jour d'une prochaine agora !
                 </div>
             </div>
         </div>
