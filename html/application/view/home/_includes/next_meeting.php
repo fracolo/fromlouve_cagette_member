@@ -23,7 +23,7 @@
                 Jeudi 8 Février 2018 19h45 - Salle de Bridge 30 rue Balard
                 </div>
                 <h3><strong>Un sujet dont vous souhaitez que l'on parle en forum ?</strong></h3>
-                Remplissez <a href="https://docs.google.com/forms/d/1_-Fre1P02O5F-TW6HJ-z0W0Saou7jEQwJE8xpjxcMIQ/edit">ce formulaire</a>
+                Remplissez <a href="<?php echo AGORA_FORM;?>">ce formulaire</a>
                 <div>
                 Le Groupe Forum / AG centralise les suggestions et verra comment le mettre à l'ordre du jour d'un prochain forum !
                 </div>
