@@ -99,7 +99,7 @@ class SsoController
                           );
             $img = self::getUserImage($uniqueid);
 
-            if (strlen($img)>1 && $uniqueid == 608) {
+            if (strlen($img)>1) {
                 $user['photourl'] = 'https://espace-membre.lacagette-coop.fr'.$img;
             }
            
